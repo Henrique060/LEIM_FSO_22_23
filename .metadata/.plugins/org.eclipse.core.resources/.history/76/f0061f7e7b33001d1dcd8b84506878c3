@@ -1,0 +1,56 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class demoaula {
+
+	private JFrame frame;
+	
+	
+	public class DemoApplication{
+		private JFrame frame;
+		private JTextField textField;
+		private JTextArea textArea;
+		
+		private void myInitialize() {
+			System.out.println("AS minhas inicializações");
+			
+			this.textArea.setText("ola");
+			this.textArea.append("\r\nmundo");
+		}
+	}
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					demoaula window = new demoaula();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public demoaula() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

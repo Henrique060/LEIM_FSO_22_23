@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre" version="1.8.0_342-342">
+        <bootpath>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\resources.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\rt.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\sunrsasign.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jsse.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jce.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\charsets.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jfr.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot" version="1.8.0_342-342">
+        <bootpath>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\resources.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\rt.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\sunrsasign.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jsse.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jce.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\charsets.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\jfr.jar"/>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\ext"/>
+            <entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="C:\Program Files\OpenJDK\jdk-8.0.342.07-hotspot\jre\lib\endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Program Files\Java\jdk-17.0.4.1" version="17.0.4.1"/>
+</libraryInfos>
