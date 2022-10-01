@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
+
+import MOVE.movement;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -15,11 +18,18 @@ import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.TextArea;
+import java.awt.ScrollPane;
 
-public class gui_app implements ActionListener, KeyListener{
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import MOVE.movement;
+
+public class gui_app extends movement implements ActionListener, KeyListener{
 
 	private JTextArea textArea;
 	private JFrame frmGuiDoServidor;
@@ -31,6 +41,11 @@ public class gui_app implements ActionListener, KeyListener{
 	private JButton btnNewButton_2;
 	private JButton btnNewButton_3;
 	private JButton btnNewButton_4;
+	
+	public movement move = new movement();
+	
+	private String robot_name;
+	
 	
 
 	/**
@@ -66,7 +81,7 @@ public class gui_app implements ActionListener, KeyListener{
 		frmGuiDoServidor = new JFrame();
 		frmGuiDoServidor.setTitle("GUI do SERVIDOR");
 		frmGuiDoServidor.setBounds(100, 100, 449, 417);
-		frmGuiDoServidor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmGuiDoServidor.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frmGuiDoServidor.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
@@ -83,6 +98,7 @@ public class gui_app implements ActionListener, KeyListener{
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 					textArea.append("\r" + textField.getText() + "\n");
+					robot_name = textField.getText();
 				}	
 			}
 
@@ -102,6 +118,18 @@ public class gui_app implements ActionListener, KeyListener{
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("On/Off");
 		rdbtnNewRadioButton.setBounds(319, 9, 103, 21);
+		rdbtnNewRadioButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(move.esta_ligado(robot_name) == true) {
+					textArea.append("\r" + "Robot ON" + "\n");
+				} else {
+					textArea.append("\r" + "Robot OFF" + "\n");
+				}
+				
+			}
+		});
+		
 		frmGuiDoServidor.getContentPane().add(rdbtnNewRadioButton);
 		
 		textField_1 = new JTextField();
@@ -188,7 +216,14 @@ public class gui_app implements ActionListener, KeyListener{
 		JButton btnNewButton = new JButton("Frente");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("\r" + "Frente..." + "\n");
+				
+				try {
+					move.andar_frente(robot_name);
+					textArea.append("\r" + "Frente..." + "\n");
+				} catch (InterruptedException e1) {
+					textArea.append("\r" + "Falhou" + "\n");
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 0, 0));
@@ -202,7 +237,14 @@ public class gui_app implements ActionListener, KeyListener{
 		btnNewButton_1 = new JButton("Parar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("\r" + "Parar..." + "\n");
+				
+				try {
+					move.parar(robot_name);
+					textArea.append("\r" + "Parar..." + "\n");
+				} catch (InterruptedException e1) {
+					textArea.append("\r" + "Falhou" + "\n");
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton_1.setBounds(159, 107, 103, 35);
@@ -211,7 +253,15 @@ public class gui_app implements ActionListener, KeyListener{
 		btnNewButton_2 = new JButton("Retaguarda");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("\r" + "Retaguarda..." + "\n");
+
+				try {
+					move.andar_tras(robot_name);
+					textArea.append("\r" + "Retaguarda..." + "\n");
+				} catch (InterruptedException e1) {
+					textArea.append("\r" + "Falhou" + "\n");
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		btnNewButton_2.setBounds(159, 146, 103, 35);
@@ -220,7 +270,14 @@ public class gui_app implements ActionListener, KeyListener{
 		btnNewButton_3 = new JButton("Direita");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("\r" + "Direita..." + "\n");
+				
+				try {
+					move.curvar_direita(robot_name);
+					textArea.append("\r" + "Direita..." + "\n");
+				} catch (InterruptedException e1) {
+					textArea.append("\r" + "Falhou" + "\n");
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton_3.setBounds(266, 107, 103, 35);
@@ -229,7 +286,14 @@ public class gui_app implements ActionListener, KeyListener{
 		btnNewButton_4 = new JButton("Esquerda");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.append("\r" + "Esquerda..." + "\n");
+				
+				try {
+					move.curvar_esquerda(robot_name);
+					textArea.append("\r" + "Esquerda..." + "\n");
+				} catch (InterruptedException e1) {
+					textArea.append("\r" + "Falhou" + "\n");
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnNewButton_4.setBounds(53, 107, 103, 35);

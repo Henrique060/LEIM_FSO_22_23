@@ -1,0 +1,49 @@
+package MOVE;
+
+import robot.RobotLegoEV3;
+
+public class movement {
+
+	RobotLegoEV3 r = new RobotLegoEV3();
+	
+	public void ligar(String nome_robot) {
+		r.OpenEV3(nome_robot);
+	}
+	
+	public void andar_frente() throws InterruptedException {
+		if(r.OpenEV3(nome_robot) == true) {
+			r.Reta(10);
+			Thread.sleep(30 * 1000);
+		}
+	}
+	
+	public void andar_tras() throws InterruptedException {
+		if(r.OpenEV3("EV3") == true) {
+			r.Reta(-10);
+			Thread.sleep(30 * 1000);
+		}
+	}
+	
+	public void curvar_esquerda() throws InterruptedException {
+		if(r.OpenEV3("EV3") == true) {
+			r.CurvarEsquerda(360, 0);
+			Thread.sleep(30 * 1000);
+		}
+	}
+	
+	public void curvar_direita() throws InterruptedException {
+		if(r.OpenEV3("EV3") == true) {
+			r.CurvarDireita(360, 0);
+			Thread.sleep(30 * 1000);
+			
+		}
+	}
+	
+	public void parar() throws InterruptedException{
+		if(r.OpenEV3("EV3") == true) {
+			r.Parar(true);
+			r.CloseEV3();
+		}
+	}
+
+}

@@ -16,7 +16,6 @@ public class DemoConsola {
 			
 			r.CloseEV3();
 		}
-		// TODO Auto-generated method stub
 
 	}
 
