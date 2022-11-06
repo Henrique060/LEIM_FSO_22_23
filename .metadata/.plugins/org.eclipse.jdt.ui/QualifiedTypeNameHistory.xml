@@ -6,6 +6,20 @@
     <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
     <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
     <fullyQualifiedTypeName name="robot.RobotLegoEV3"/>
-    <fullyQualifiedTypeName name="MOVE.movement"/>
     <fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+    <fullyQualifiedTypeName name="servidor.servidor"/>
+    <fullyQualifiedTypeName name="GUI.gui_app"/>
+    <fullyQualifiedTypeName name="java.awt.EventQueue"/>
+    <fullyQualifiedTypeName name="MOVE.movement"/>
+    <fullyQualifiedTypeName name="fso.trab1.servidor.Servidor"/>
+    <fullyQualifiedTypeName name="fso.trab1.gui.GuiApp"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.CanalComunicacaoLock"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.mensagens.MensagemParar"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.mensagens.Mensagem"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.mensagens.MensagemReta"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.mensagens.MensagemCurvaDir"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.mensagens.MensagemCurvaEsq"/>
+    <fullyQualifiedTypeName name="fso.trab1.canal.CanalComunicacaoMensagens"/>
+    <fullyQualifiedTypeName name="fso.trab1.vaguear.Vaguear"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
