@@ -8,6 +8,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -436,6 +438,22 @@ public class GuiApp implements ActionListener, KeyListener, Runnable{
 		frmGuiDoServidor.getContentPane().add(chckbxDebug);
 		
 		chckbxVaguear = new JCheckBox("Vaguear");
+		chckbxVaguear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textAreaConsola.append("\r" + "Vaguear..." + "\n");
+				serv.setTipo((short)1);
+				ProcessBuilder pb = new ProcessBuilder("java", "-jar", "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\vaguearExec.jar", "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\canal.txt");
+				System.out.print("criado");
+				try {
+					pb.start();
+					System.out.print("começado");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					System.out.print("falhado");
+				}
+			}
+		});
 		chckbxVaguear.setBounds(337, 146, 93, 21);
 		frmGuiDoServidor.getContentPane().add(chckbxVaguear);
 		

@@ -5,8 +5,12 @@ public class MensagemParar extends Mensagem{
 		super(Mensagem.tipoParar, estado, (short) 0, id);
 	}
 	
-	public short getEstado() {
-		return this.getParam1();
+	public boolean getEstado() {
+		if(this.getParam1() == 0) {
+			return false;
+		}
+		
+		return true;
 	}
 	
 	@Override

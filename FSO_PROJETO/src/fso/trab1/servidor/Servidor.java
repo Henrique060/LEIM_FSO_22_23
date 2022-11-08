@@ -2,7 +2,7 @@ package fso.trab1.servidor;
 
 import robot.RobotLegoEV3;
 import java.awt.EventQueue;
-import java.io.File;
+
 import java.lang.reflect.InvocationTargetException;
 
 import fso.trab1.canal.CanalComunicacaoMensagens;
@@ -12,7 +12,6 @@ import fso.trab1.canal.mensagens.MensagemCurvaEsq;
 import fso.trab1.canal.mensagens.MensagemParar;
 import fso.trab1.canal.mensagens.MensagemReta;
 import fso.trab1.gui.GuiApp;
-import fso.trab1.vaguear.Vaguear;
 
 
 public class Servidor implements Runnable{
@@ -31,6 +30,8 @@ public class Servidor implements Runnable{
 	public final short frente    = 5;
 	public final short direita   = 6;
 	
+	public short mensagemtipo = 0;
+	
 	private CanalComunicacaoMensagens c;
 	
 	public short estado = 1;
@@ -42,6 +43,14 @@ public class Servidor implements Runnable{
 		//c.enviarMensagem(msg);
 		System.out.println("servidor criado");	
 		this.r = new RobotLegoEV3();
+	}
+	
+	public short getTipo() {
+		return mensagemtipo;
+	}
+	
+	public void setTipo(short tipo) {
+		this.mensagemtipo = tipo;
 	}
 	
 	/*1- getters e setters.
@@ -148,33 +157,41 @@ public class Servidor implements Runnable{
 			
 		//r.OpenEV3("EV3"); //teste para tentar abrir o robot sem ter fisico
 		//this.c = new CanalComunicacaoMensagens();
-		c.abrirCanal("teste_vaguear.txt"); //testes de simulação (??) perguntar ao stor
+		c.abrirCanal("C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\canal.txt"); //testes de simulação (??) perguntar ao stor
 		for(;;) {
 			try {
-				Mensagem msg;
+				//Mensagem msg;
 				
 					//System.out.println("A receber mensagem.... ");
-					msg = c.receberMensagemM();
+					//msg = c.receberMensagemM();
 					//System.out.println( msg.toString());
 					//System.out.println("Mensagem recebida ");
 					
-					switch(msg.getTipo()) {
+					/*
+					 * switch(getTipo()) {
+					 * 
+					 * case 1: ProcessBuilder pb = new ProcessBuilder("java", "-jar",
+					 * "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\vaguearExec.jar",
+					 * "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\canal.txt");
+					 * //pb.command(
+					 * "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\vaguearExec.jar"
+					 * ); //pb.directory(new
+					 * File("C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui"));
+					 * System.out.print("criado"); try { pb.start(); System.out.print("começado"); }
+					 * catch (IOException e1) { // TODO Auto-generated catch block
+					 * e1.printStackTrace(); System.out.print("falhado"); } break; }
+					 */
 					
-						case Mensagem.tipoVaguear:
-							ProcessBuilder pb = new ProcessBuilder("java", "-jar", "vaguear_jar.jar");
-							pb.directory(new File("C:\\Users\\h_e_m\\OneDrive\\Documentos\\FSO\\CanalComu"));
-							Process p = pb.start();
-							break;
-						
-						
-					}
 					
+					Mensagem msg;
 					
+					//System.out.println("A receber mensagem.... ");
+					msg = c.receberMensagemM();
 					
 					
 					//servidor abaixo foi teste inicial para 
 					//valores simples de movimento
-					/*switch(msg.getTipo()){
+					switch(msg.getTipo()){
 					
 						case Mensagem.tipoReta:
 							MensagemReta msgReta = (MensagemReta)msg; //cast à mensagem original para ter o valor de reta
@@ -201,7 +218,7 @@ public class Servidor implements Runnable{
 						
 							break;
 							
-					}*/
+					}
 			} catch (Exception e) {
 				
 			}

@@ -27,7 +27,7 @@
 		<item key="create_package_info_java" value="false"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="1"/>
+		<item key="pageIndex" value="2"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.wizards.buildpaths.NewVariableEntryDialog">
 		<item key="DIALOG_X_ORIGIN" value="195"/>
