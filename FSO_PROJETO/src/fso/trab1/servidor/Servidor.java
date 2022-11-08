@@ -158,6 +158,8 @@ public class Servidor implements Runnable{
 		//r.OpenEV3("EV3"); //teste para tentar abrir o robot sem ter fisico
 		//this.c = new CanalComunicacaoMensagens();
 		c.abrirCanal("C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\canal.txt"); //testes de simulação (??) perguntar ao stor
+		//TODO este path tem de ser genérico ou vai fazer kaput no PC do professor
+		//tipo "../gui/canal.txt"
 		for(;;) {
 			try {
 				//Mensagem msg;

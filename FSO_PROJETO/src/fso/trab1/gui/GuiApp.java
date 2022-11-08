@@ -250,7 +250,8 @@ public class GuiApp implements ActionListener, KeyListener, Runnable{
 						serv.setAngulo(num);
 					}catch(NumberFormatException e1) {
 						System.out.print("Não foi dado um angulo correto!!!" + "\n");
-						textAreaConsola.append("\r" + "Não foi dado um angulo correto!!!" + "\n");
+						textAreaConsola.append("\r" + "Não foi dado um angulo correto!!!" + "\n"); //Porque é que isto tá a juntar 3 strings separadas?
+						//textAreaConsola.append("\r Não foi dado um angulo correto!!! \n"); //Não é melhor mudar todas para este formato?
 					}
 				}	
 			}
@@ -440,9 +441,17 @@ public class GuiApp implements ActionListener, KeyListener, Runnable{
 		chckbxVaguear = new JCheckBox("Vaguear");
 		chckbxVaguear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//ter um bool para ver se isto foi ativar ou desativar o vaguear, e criar o vaguear ou matar o vaguear
+				/*if(aVaguear && pb.isALive()){
+				 * pb.waitFor(); //esperar que acabe o que está a fazer
+				 * pb.destroy(); //kill it
+				 * aVaguear = false;
+				 * }
+				 */
 				textAreaConsola.append("\r" + "Vaguear..." + "\n");
 				serv.setTipo((short)1);
 				ProcessBuilder pb = new ProcessBuilder("java", "-jar", "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\vaguearExec.jar", "C:\\LEIM\\3SEM\\FSO\\Code\\FSO_PROJETO\\src\\fso\\trab1\\gui\\canal.txt");
+				//TODO mudar isto para path genérico
 				System.out.print("criado");
 				try {
 					pb.start();
